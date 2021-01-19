@@ -1,0 +1,15 @@
+server:
+  port: 8003
+
+eureka:
+  client:
+    register-with-eureka: true   #向eureka注册自己
+    fetch-registry: true
+    service-url:
+      #单机版的配置
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/    #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
+
+spring:
+  application:
+    #微服务名称 此处的名称即为注册发现中心的名称
+    name: cloud-provider-hystrix-payment
